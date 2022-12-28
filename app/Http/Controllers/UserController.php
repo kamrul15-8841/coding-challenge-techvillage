@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Result;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
 
     public function home()
     {
-        return view('home.home');
+        $highestMark = DB::Connection()->select("SELECT * FROM results WHERE subject='English' ORDER BY mark DESC limit 2,3");
+
+        return view('home.home', [
+            'results' => Result::latest()->get(),
+            'marks' => $highestMark,
+        ]);
     }
     /**
      * Display a listing of the resource.

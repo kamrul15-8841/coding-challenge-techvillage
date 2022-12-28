@@ -4,9 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Result;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ResultController extends Controller
 {
+//    public function highestMark()
+//    {
+//        $highestMark = DB::Connection()->select("SELECT * FROM results WHERE subject='English' ORDER BY mark DESC limit 2,3");
+//        return view('home.home', [
+//            'marks' => $highestMark,
+//            'results' => Result::latest()->get(),
+//        ]);
+//    }
+
     /**
      * Display a listing of the resource.
      *

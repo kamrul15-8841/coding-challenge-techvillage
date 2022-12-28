@@ -1,14 +1,14 @@
 @extends('master')
 
 @section('title')
-    Create User
+    Edit User
 @endsection
 @section('body')
     <div class="row py-3">
         <div class="col-md-8 mx-auto">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="float-start">Add User</h3>
+                    <h3 class="float-start">Edit User</h3>
                     <a href="{{route('results.index')}}" class="btn btn-info float-end">Manage</a>
                 </div>
                 <div class="card-body">

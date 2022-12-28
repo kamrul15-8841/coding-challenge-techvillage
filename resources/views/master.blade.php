@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('/')}}front/css/all.css">
     <link rel="stylesheet" href="{{asset('/')}}front/css/bootstrap.css">
-    <title>Test - @yield('title')</title>
+    <title>@yield('title') - Coding Challenge TechVillage</title>
 </head>
 <body>
 

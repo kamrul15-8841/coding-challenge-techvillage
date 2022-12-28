@@ -15,6 +15,7 @@ use App\Http\Controllers\ResultController;
 |
 */
 Route::get('/', [UserController::class, 'home'])->name('home');
+Route::get('/highest-mark', [UserController::class, 'home'])->name('highest.mark');
 //For User
 Route::resource('users', UserController::class);
 //For Result
