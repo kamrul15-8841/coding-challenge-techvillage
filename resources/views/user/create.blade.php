@@ -22,6 +22,13 @@
                         @csrf
 
                         <div class="row mt-3">
+                            <label for="" class="col-md-4">UUID</label>
+                            <div class="col-md-8">
+                                <input type="text" name="uuid" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
                             <label for="" class="col-md-4">First Name</label>
                             <div class="col-md-8">
                                 <input type="text" name="first_name" class="form-control">

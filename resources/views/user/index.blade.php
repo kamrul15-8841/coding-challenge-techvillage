@@ -21,6 +21,7 @@
                         <thead>
                         <tr>
                             <th>SI NO</th>
+                            <th>User ID</th>
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Email</th>
@@ -31,16 +32,17 @@
                         @foreach($users as $user)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
+                                <td>{{$user->uuid}}</td>
                                 <td>{{$user->first_name}}</td>
                                 <td>{{$user->last_name}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>
 
-                                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-md btn-warning" title="Edit Course" style="display: inline-block">
+                                    <a href="{{ route('users.edit', $user->uuid) }}" class="btn btn-md btn-warning" title="Edit Course" style="display: inline-block">
                                         Edit
                                     </a>
 
-                                    <form action="{{ route('users.destroy', $user->id) }}" method="post" style="display: inline-block">
+                                    <form action="{{ route('users.destroy', $user->uuid) }}" method="post" style="display: inline-block">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn btn-sm btn-danger "  onclick="return confirm('Are you sure you want to delete this');" title="Delete Course">

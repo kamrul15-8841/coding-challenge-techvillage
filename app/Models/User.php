@@ -11,9 +11,12 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
 
-    public static function createOrUpdateUser($request, $id = null)
+    protected $primaryKey = 'uuid';
+
+    public static function createOrUpdateUser($request, $uuid = null)
     {
-        User::updateOrCreate(['id'=> $id], [
+        User::updateOrCreate(['uuid'=> $uuid], [
+            'uuid' => $request->uuid,
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
@@ -28,6 +31,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'uuid',
         'first_name',
         'last_name',
         'email',
